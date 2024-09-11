@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Login</title>
+</head>
+
+<body>
+
+    <!-- sessão principal do formulário de cadastro -->
+    <main>
+
+        <section>
+
+            <!-- título do form -->
+            <h1 id="title">Cadastro de Clientes</h1>
+            <!-- O formulário usa a tag form e seus campos são descritos usando tags semânticas apropriadas -->
+            <form action="/submit" method="post">
+
+                <!-- Campo de nome com validação de texto obrigatória -->
+                <label for="name">Nome Completo: </label><!--nomeia o campo que contenha o ID igual o FOR-->
+                <input type="text" id="name" name="name" required minlength="3" maxlength="100"
+                    placeholder="Digite seu nome completo" />
+
+                <!-- Campo de e-mail com validação de formato -->
+                <label for="email">E-mail: </label><!--nomeia o campo que contenha o ID igual o FOR-->
+                <input type="email" id="email" name="email" required placeholder="Digite seu E-mail" />
+
+                <!-- campo de telefone com validação de formato número -->
+                <label for="phone">Telefone: </label><!--nomeia o campo que contenha o ID igual o FOR-->
+                <input type="tel" id="phone" name="phone" placeholder="Formato: (00) 00000-0000" />
+
+                <!-- campo de seleção de gênero -->
+                <fieldset><!--usado dentro de um form para agrupar elementos do form que são relacionados-->
+
+                    <legend>Sexo: </legend>
+                    <label><input type="radio" name="gender" value="Masculino" required />Masculino</label>
+                    <label><input type="radio" name="gender" value="Feminino" />Feminino</label>
+
+                </fieldset><!--fieldset-->
+
+                <!-- campo data de nascimento -->
+                <label for="birthdate">Data de Nascimento: </label><!--nomeia o campo que contenha o ID igual o FOR-->
+                <input type="date" id="birthdate" name="birthdate" required />
+
+                <!-- campo de seleção de cor favorita -->
+                <label for="color">Cor Favorita: </label><!--nomeia o campo que contenha o ID igual o FOR-->
+                <input type="color" id="color" name="color" value="#0000ff" />
+
+                <!-- campo de seleção de pais com tag select -->
+                <label for="country">País: </label><!--nomeia o campo que contenha o ID igual o FOR-->
+                <select id="country" name="country" required><!--apresenta um menu de opções-->
+
+                    <option value="">Seçecione seu país</option><!--opção-->
+                    <option value="brasil">Brasil</option><!--opção-->
+                    <option value="eua">Estados Unidos</option><!--opção-->
+                    <option value="canada">Canadá</option><!--opção-->
+
+                </select><!--select-->
+
+                <!-- campo de seleção de hobbies usando checkbox -->
+                <fieldset><!--usado dentro de um form para agrupar elementos do form que são relacionados-->
+
+                    <legend>Hobbies: </legend><!--coloca um "título" no fieldset-->
+                    <label><input type="checkbox" name="hobbies" value="esportes" /> Esportes</label>
+                    <label><input type="checkbox" name="hobbies" value="musica" /> Musica</label>
+                    <label><input type="checkbox" name="hbbies" value="tecnologia" /> Tecnologia</label>
+
+                </fieldset><!--fieldset-->
+
+                <!-- campo de texto longo para comentários -->
+                <label for="comments">Comentários: </label>
+                <textarea id="comments" name="comments" rows="5" cols="50" placeholder="Adicione um comentário"
+                    style="resize: none;"></textarea>
+
+                <!-- campo de envio de arquivo -->
+                <label for="profilePicture">Envie uma foto de perfil: </label>
+                <input type="file" id="profilePicture" name="profilePicture" accept="image/*" />
+
+                <!-- Botão de envio do formulário -->
+                <button type="button">Cadastrar</button>
+                <button type="reset">Limpar</button>
+
+            </form><!--form-->
+
+        </section><!--section-->
+
+    </main><!--main-->
+
+    <footer id="baseboard">
+        <p>&copy; 2024 Todos os direitos reservados</p>
+    </footer><!--footer-->
+
+    <script src="index.js"></script>
+
+</body>
+
+</html>
